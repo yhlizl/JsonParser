@@ -19,3 +19,7 @@ type "jp" to see document
 
 default.json parser : jp -f [location] d 
 choice.json parser : jp -f [location] j
+
+output to pwd
+
+![image](https://user-images.githubusercontent.com/60890077/146682312-4969a6eb-95ad-4f63-895c-97920df3b3ee.png)
