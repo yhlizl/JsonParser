@@ -133,7 +133,7 @@ for i := range result.Array() {
 	}
 	//fmt.Println(name,result.Array()[i],reviewName.Array()[i],interSlice)
 	interStr:=strings.Join(interSlice,";")
-	resultMap[result.Array()[i].String()+"("+reviewName.Array()[i].String()+")"][name]=interStr
+	resultMap[result.Array()[i].String()+";"+reviewName.Array()[i].String()][name]=interStr
 
 }
 
