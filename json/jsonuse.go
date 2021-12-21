@@ -6,6 +6,7 @@ import (
 	"os"
 	pathuse "path"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 
@@ -45,6 +46,8 @@ func initExcel(data map[string]map[string]string,deviceList []string){
     // Set active sheet of the workbook.
     f.SetActiveSheet(index)
     // tranverse to create data value
+	//sort list
+	sort.Strings(deviceList)
 	y:=2
 	for internalName:=range data {
 		RVcells:=XY(y,1)

@@ -5,6 +5,7 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 
@@ -47,6 +48,8 @@ func initExcel(data map[string]map[string]string,keyList map[string]bool){
 	for i:=range keyList{
 		keyStrList=append(keyStrList,i)
 	}
+	//sort list
+	sort.Strings(keyStrList)
 	// tranverse to create data value
 	x:=2
 	for device:=range data {
