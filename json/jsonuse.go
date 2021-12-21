@@ -119,8 +119,8 @@ reviewName := gjson.Get(string(bs), "#.reviewName")
 //fmt.Println(len(result.Array()),len(reviewName.Array()),len(choices.Array()))
 // fmt.Println(choices)
 for i := range result.Array() {
-	if _,ok:=resultMap[result.Array()[i].String()+"("+reviewName.Array()[i].String()+")"];!ok{
-		resultMap[result.Array()[i].String()+"("+reviewName.Array()[i].String()+")"]=map[string]string{}
+	if _,ok:=resultMap[result.Array()[i].String()+";"+reviewName.Array()[i].String()];!ok{
+		resultMap[result.Array()[i].String()+";"+reviewName.Array()[i].String()]=map[string]string{}
 	}
 	num:=strconv.Itoa(i)
 	choices := gjson.Get(string(bs), num+".choices")
