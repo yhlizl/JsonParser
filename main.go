@@ -15,33 +15,31 @@ import (
 func defaultRun(c *cli.Context) error {
 	defaultjson.DefaultJson(location)
 
-    return nil
+	return nil
 }
 
 func jsonRun(c *cli.Context) error {
-    jsonuse.Jsonuse(location)
+	jsonuse.Jsonuse(location)
 
-    return nil
+	return nil
 }
 
 var location string
 
-func main(){
+func main() {
 	fmt.Println("-----start:----")
 
-
-	//Start 
+	//Start
 
 	app := cli.NewApp()
-    app.Name = "Json Parser"
-    app.Usage = "Json Parser v1"
+	app.Name = "Json Parser"
+	app.Usage = "Json Parser v1"
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
-			Name:  "from, f",
-			Usage: "input the location of the files",
-			Destination:  &location,
+			Name:        "from, f",
+			Usage:       "input the location of the files",
+			Destination: &location,
 		},
-		
 	}
 
 	app.Commands = []cli.Command{
@@ -49,13 +47,13 @@ func main(){
 			Name:    "jsonRun",
 			Aliases: []string{"j"},
 			Usage:   "run script to output summary excel from json files",
-			Action: jsonRun,
+			Action:  jsonRun,
 		},
 		{
 			Name:    "defaultRun",
 			Aliases: []string{"d"},
 			Usage:   "run script to output summary excel from default files",
-			Action: defaultRun,
+			Action:  defaultRun,
 		},
 	}
 

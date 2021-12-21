@@ -90,7 +90,7 @@ walkFunction(pathList)
 
 func visit(path string, di fs.DirEntry, err error) error {
     fmt.Printf("Visited: %s %s %t\n", path,di.Name(),di.IsDir())
-	if !di.IsDir()&&strings.Contains(di.Name(),".json") {
+	if !di.IsDir()&&strings.Contains(di.Name(),"defaults.json") {
 		pathList=append(pathList,path)
 	}
     return nil

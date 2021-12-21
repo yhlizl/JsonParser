@@ -40,8 +40,8 @@ func initExcel(data map[string]map[string]string,deviceList []string){
     // Create a new sheet.
     index := f.NewSheet("Compare")
     // Set value of a cell.
-    f.SetCellValue("Compare", "A1", "internalName")
-    f.SetCellValue("Compare", "B1", "ReviewName")
+    _=f.SetCellValue("Compare", "A1", "internalName")
+    _=f.SetCellValue("Compare", "B1", "ReviewName")
     // Set active sheet of the workbook.
     f.SetActiveSheet(index)
     // tranverse to create data value
